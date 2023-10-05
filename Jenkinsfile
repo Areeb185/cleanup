@@ -25,9 +25,12 @@ pipeline {
   }
   post {
       always {
-        dir("${"/var/lib/jenkins/workspace"}@tmp") {
-          deleteDir()
-        }
+          dir("/var/lib/jenkins/workspace/@tmp") {
+              deleteDir()
+          }
+        // dir("${"/var/lib/jenkins/workspace"}@tmp") {
+        //   deleteDir()
+        // }
         // dir("${env.WORKSPACE}_ws_cleanup") {
         //   deleteDir()
         // }
