@@ -23,16 +23,16 @@ pipeline {
  
 
   }
-  post {
-      always {
-        dir("${env.WORKSPACE}@tmp") {
-          deleteDir()
-        }
-        dir("${env.WORKSPACE}_ws_cleanup") {
-          deleteDir()
-        }
-      }
-    }
+  // post {
+  //     always {
+  //       dir("${env.WORKSPACE}@tmp") {
+  //         deleteDir()
+  //       }
+  //       dir("${env.WORKSPACE}_ws_cleanup") {
+  //         deleteDir()
+  //       }
+  //     }
+  //   }
 
  
 
