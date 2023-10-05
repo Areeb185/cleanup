@@ -23,16 +23,16 @@ pipeline {
  
 
   }
-  // post {
-  //     always {
-  //       dir("${env.WORKSPACE}@tmp") {
-  //         deleteDir()
-  //       }
-  //       dir("${env.WORKSPACE}_ws_cleanup") {
-  //         deleteDir()
-  //       }
-  //     }
-  //   }
+  post {
+      always {
+        dir("${/var/lib/jenkins/workspace}@tmp") {
+          deleteDir()
+        }
+        // dir("${env.WORKSPACE}_ws_cleanup") {
+        //   deleteDir()
+        // }
+      }
+    }
 
  
 
