@@ -27,16 +27,8 @@ pipeline {
       always {
 
         script {
-                // Define the directory name to find and delete
-                def directoryToDelete = "*@tmp"
-
-                // Define the custom workspace path
-                def customWorkspacePath = '/var/lib/jenkins/workspace'
-
-                // Find and delete directories with the "@tmp" suffix within the custom workspace
-                sh "find ${customWorkspacePath} -type d -name '${directoryToDelete}' -exec rm -rf {} \\;"
+                sh "clean=$(find /var/lib/jenkins/workspace -type d \( -name '*@tmp' -o -name '*_ws_cleanup' \) -exec rm -rf {} +)"
             }
-
 
         
         // dir("/var/lib/jenkins/workspace") {
