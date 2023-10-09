@@ -26,13 +26,13 @@ pipeline {
   post {
       always {
 
-        script {
-                //sh "clean=$(find /var/lib/jenkins/workspace -type d \( -name '*@tmp' -o -name '*_ws_cleanup' \) -exec rm -rf {} +)"
-                def clean = sh(script: "find /var/lib/jenkins/workspace -type d \\( -name '*@tmp' -o -name '*_ws_cleanup' \\) -exec rm -rf {} +", returnStatus: true, returnStdout: true).trim()
+        // script {
+        //         //sh "clean=$(find /var/lib/jenkins/workspace -type d \( -name '*@tmp' -o -name '*_ws_cleanup' \) -exec rm -rf {} +)"
+        //         def clean = sh(script: "find /var/lib/jenkins/workspace -type d \\( -name '*@tmp' -o -name '*_ws_cleanup' \\) -exec rm -rf {} +", returnStatus: true, returnStdout: true).trim()
                 
-                // Print the captured output (optional)
-                echo "Deleted directories: ${clean}"
-            }
+        //         // Print the captured output (optional)
+        //         echo "Deleted directories: ${clean}"
+        //     }
 
         
         // dir("/var/lib/jenkins/workspace") {
