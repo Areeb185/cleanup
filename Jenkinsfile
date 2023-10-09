@@ -4,7 +4,9 @@ pipeline {
     stage('Build') {
       
       steps {
+        
         dir("${env.WORKSPACE}@tmp") {
+          sh 'ls'
           deleteDir()
         }
         dir("${env.WORKSPACE}_ws_cleanup") {
