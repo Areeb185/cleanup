@@ -2,13 +2,14 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      dir("${env.WORKSPACE}@tmp") {
+      
+      steps {
+        dir("${env.WORKSPACE}@tmp") {
           deleteDir()
         }
         dir("${env.WORKSPACE}_ws_cleanup") {
           deleteDir()
         }
-      steps {
         sh 'echo "Building..."'
       }
     }
