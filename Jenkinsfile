@@ -5,7 +5,7 @@ pipeline {
       
       steps {
         
-        dir("${env.WORKSPACE}@tmp") {
+        dir("/var/lib/jenkins/workspace") {
           sh 'ls'
           deleteDir()
         }
