@@ -17,32 +17,32 @@ pipeline {
       }
     }
   }
-  // post {
-  //     always {
+  post {
+      always {
 
-  //       // script {
-  //       //         //sh "clean=$(find /var/lib/jenkins/workspace -type d \( -name '*@tmp' -o -name '*_ws_cleanup' \) -exec rm -rf {} +)"
-  //       //         def clean = sh(script: "find /var/lib/jenkins/workspace -type d \\( -name '*@tmp' -o -name '*_ws_cleanup' \\) -exec rm -rf {} +", returnStatus: true, returnStdout: true).trim()
+        // script {
+        //         //sh "clean=$(find /var/lib/jenkins/workspace -type d \( -name '*@tmp' -o -name '*_ws_cleanup' \) -exec rm -rf {} +)"
+        //         def clean = sh(script: "find /var/lib/jenkins/workspace -type d \\( -name '*@tmp' -o -name '*_ws_cleanup' \\) -exec rm -rf {} +", returnStatus: true, returnStdout: true).trim()
                 
-  //       //         // Print the captured output (optional)
-  //       //         echo "Deleted directories: ${clean}"
-  //       //     }
+        //         // Print the captured output (optional)
+        //         echo "Deleted directories: ${clean}"
+        //     }
 
         
-  //       // dir("/var/lib/jenkins/workspace") {
-  //       //             // Delete directories or perform other actions
-  //       //             sh "rm -rf cleanUp@tmp"
-  //       // }
+        // dir("/var/lib/jenkins/workspace") {
+        //             // Delete directories or perform other actions
+        //             sh "rm -rf cleanUp@tmp"
+        // }
 
         
-  //       // dir("${env.WORKSPACE}@tmp") {
-  //       //   deleteDir()
-  //       // }
-  //       // dir("${env.WORKSPACE}_ws_cleanup") {
-  //       //   deleteDir()
-  //       // }
-  //     }
-  //   }
+        dir("${env.WORKSPACE}@tmp") {
+          deleteDir()
+        }
+        dir("${env.WORKSPACE}_ws_cleanup") {
+          deleteDir()
+        }
+      }
+    }
 
  
 
