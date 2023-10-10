@@ -22,6 +22,7 @@ pipeline {
           sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec ls -d {} \\;'
           //sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
           sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
+          sh 'ls'
           
           
           //sh 'find -type d -name "*@tmp*" -o -type d -name "*_ws_cleanup*" | xargs rm -r'
