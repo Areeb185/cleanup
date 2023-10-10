@@ -43,7 +43,7 @@ pipeline {
       always {
 
         script{
-          sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
+          sh 'find /var/lib/jenkins/workspace -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
         }
 
         // script {
