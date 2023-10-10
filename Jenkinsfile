@@ -4,13 +4,15 @@ pipeline {
     stage('Build') {
       
       steps {
-        dir("/var/lib/jenkins/workspace") {
-          sh 'ls'
-        }
         // dir("${env.WORKSPACE}_ws_cleanup") {
         //   deleteDir()
         // }
         sh 'echo "Building..."'
+        dir("/var/lib/jenkins/workspace") { //working fine(always at the end)
+          sh 'ls'
+          sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
+          sh 'ls'
+        }
       }
     }
     stage('Test') {
@@ -36,11 +38,11 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'echo "Deploying..."'
-        dir("/var/lib/jenkins/workspace") {
-          sh 'ls'
-          sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
-          sh 'ls'
-        }
+        // dir("/var/lib/jenkins/workspace") { //working fine(always at the end)
+        //   sh 'ls'
+        //   sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
+        //   sh 'ls'
+        // }
         
       } 
     }
