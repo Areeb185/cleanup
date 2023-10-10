@@ -6,12 +6,11 @@ pipeline {
       steps {
         
         dir("/var/lib/jenkins/workspace") {
-          sh 'ls'
-          deleteDir()
+          sh 'ls | grep @tmp'
         }
-        dir("${env.WORKSPACE}_ws_cleanup") {
-          deleteDir()
-        }
+        // dir("${env.WORKSPACE}_ws_cleanup") {
+        //   deleteDir()
+        // }
         sh 'echo "Building..."'
       }
     }
