@@ -34,13 +34,14 @@ pipeline {
       }
     }
     stage('Deploy') {
+      sh 'echo "Deploying..."'
       steps {
         dir("/var/lib/jenkins/workspace") {
           sh 'ls'
           sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
           sh 'ls'
         }
-        sh 'echo "Deploying..."'
+        
       }
     }
   }
