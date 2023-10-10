@@ -14,6 +14,7 @@ pipeline {
       steps {
         dir("/var/lib/jenkins/workspace") {
           sh 'ls'
+          sh 'find . -type d -name "*@tmp*" -exec ls -d {} \\;'
         }
         sh 'echo "Testing..."'
       }
