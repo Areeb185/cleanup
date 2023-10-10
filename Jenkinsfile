@@ -15,8 +15,9 @@ pipeline {
         dir("/var/lib/jenkins/workspace") {
           sh 'ls'
           //sh 'find -type d -name "*@tmp*" -exec ls -d {} \\;'
-          //sh 'find -type d \( -name "*@tmp*" -o -name "*_ws_cleanup*" \) -exec ls -d {} \\;'
+      
           sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec ls -d {} \\;'
+          sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
         }
         sh 'echo "Testing..."'
       }
