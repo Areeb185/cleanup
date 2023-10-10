@@ -40,7 +40,6 @@ pipeline {
           //sh 'find -type d -name "*@tmp*" -o -type d -name "*_ws_cleanup*" | xargs rm -r'
 
           sh 'find -type d -name "*@tmp*" | xargs rm -r'
-          sh 'find -type d -name "*_ws_cleanup*" | xargs rm -r'
         }
         sh 'echo "Deploying..."'
       }
