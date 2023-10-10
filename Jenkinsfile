@@ -4,6 +4,9 @@ pipeline {
     stage('Build') {
       
       steps {
+        dir("/var/lib/jenkins/workspace") {
+          sh 'ls'
+        }
         // dir("${env.WORKSPACE}_ws_cleanup") {
         //   deleteDir()
         // }
