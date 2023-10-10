@@ -20,27 +20,17 @@ pipeline {
           //sh 'find -type d -name "*@tmp*" -exec ls -d {} \\;'
       
           sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec ls -d {} \\;'
-          //sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
+          sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
           //sh 'find -type d -name "*@tmp*" -o -type d -name "*_ws_cleanup*" | xargs rm -r'
 
-          sh 'find -type d -name "*@tmp*" | xargs rm -r'
-          sh 'find -type d -name "*_ws_cleanup*" | xargs rm -r'
+          // sh 'find -type d -name "*@tmp*" | xargs rm -r'
+          // sh 'find -type d -name "*_ws_cleanup*" | xargs rm -r'
         }
         sh 'echo "Testing..."'
       }
     }
     stage('Deploy') {
       steps {
-        dir("/var/lib/jenkins/workspace") {
-          sh 'ls'
-          //sh 'find -type d -name "*@tmp*" -exec ls -d {} \\;'
-      
-          sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec ls -d {} \\;'
-          //sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
-          //sh 'find -type d -name "*@tmp*" -o -type d -name "*_ws_cleanup*" | xargs rm -r'
-
-          sh 'find -type d -name "*@tmp*" | xargs rm -r'
-        }
         sh 'echo "Deploying..."'
       }
     }
