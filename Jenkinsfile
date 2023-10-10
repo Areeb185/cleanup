@@ -16,11 +16,17 @@ pipeline {
     }
     stage('Test') {
       steps {
+        dir("/var/lib/jenkins/workspace") {
+          sh 'ls'
+        }
         sh 'echo "Testing..."'
       }
     }
     stage('Deploy') {
       steps {
+        dir("/var/lib/jenkins/workspace") {
+          sh 'ls'
+        }
         sh 'echo "Deploying..."'
       }
     }
