@@ -8,11 +8,6 @@ pipeline {
         //   deleteDir()
         // }
         sh 'echo "Building..."'
-        dir("/var/lib/jenkins/workspace") { //working fine(always at the end)
-          sh 'ls'
-          sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +'
-          sh 'ls'
-        }
       }
     }
     stage('Test') {
