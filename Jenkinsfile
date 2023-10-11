@@ -17,7 +17,6 @@ pipeline {
         //   //sh 'find -type d -name "*@tmp*" -exec ls -d {} \\;'
       
         //   sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec ls -d {} \\;'
-        //   //sh 'find . -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} \\;'
         //   //sh 'find -type d \\( -name "*@tmp*" -o -name "*_ws_cleanup*" \\) -exec rm -r {} +' //find and delete
         //   sh 'ls'
           
@@ -51,7 +50,6 @@ pipeline {
         }
         
         // dir("/var/lib/jenkins/workspace") {
-        //             // Delete directories or perform other actions
         //             sh "rm -rf cleanUp@tmp"
         // }
 
